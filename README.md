@@ -1,4 +1,4 @@
-# VTEX CLI Plugin Template
+# VTEX CLI Plugin Deps
 
 Extend the `vtex` toolbelt!
 
@@ -15,7 +15,7 @@ Extend the `vtex` toolbelt!
 For more information, read [Ocliff Docs](https://oclif.io/docs/introduction).
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-![npm](https://img.shields.io/npm/v/@vtex/cli-plugin-template)
+![npm](https://img.shields.io/npm/v/@vtex/cli-plugin-deps)
 
 <!-- toc -->
 * [VTEX CLI Plugin Template](#vtex-cli-plugin-template)
