@@ -18,18 +18,18 @@ For more information, read [Ocliff Docs](https://oclif.io/docs/introduction).
 ![npm](https://img.shields.io/npm/v/@vtex/cli-plugin-deps)
 
 <!-- toc -->
-* [VTEX CLI Plugin Template](#vtex-cli-plugin-template)
+* [VTEX CLI Plugin Deps](#vtex-cli-plugin-deps)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g @vtex/cli-plugin-template
+$ npm install -g @vtex/cli-plugin-deps
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@vtex/cli-plugin-template/0.0.0 linux-x64 node-v12.18.3
+@vtex/cli-plugin-deps/0.0.0 linux-x64 node-v12.18.3
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -38,27 +38,71 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example hello [FILE]`](#oclif-example-hello-file)
+* [`oclif-example deps:diff [WORKSPACE1] [WORKSPACE2]`](#oclif-example-depsdiff-workspace1-workspace2)
+* [`oclif-example deps:list`](#oclif-example-depslist)
+* [`oclif-example deps:update [APPID] [ITHAPPID]`](#oclif-example-depsupdate-appid-ithappid)
 
-## `oclif-example hello [FILE]`
+## `oclif-example deps:diff [WORKSPACE1] [WORKSPACE2]`
 
-describe the command here
+Diff between workspace dependencies. If only a parameter is passed the current workspace is used in the diff and if no parameter is passed the diff is made between the current workspace and master
 
 ```
 USAGE
-  $ oclif-example hello [FILE]
+  $ oclif-example deps:diff [WORKSPACE1] [WORKSPACE2]
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-  -v, --verbose    Show debug level logs
-  --trace          Ensure all requests to VTEX IO are traced
+  -h, --help     show CLI help
+  -v, --verbose  Show debug level logs
+  --trace        Ensure all requests to VTEX IO are traced
 
 EXAMPLE
-  $ oclif-example hello
-  hello world from ./src/hello.ts!
+  vtex deps diff workspace1 workspace2
 ```
 
-_See code: [build/commands/hello.ts](https://github.com/vtex/cli-plugin-template/blob/v0.0.0/build/commands/hello.ts)_
+_See code: [build/commands/deps/diff.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.0/build/commands/deps/diff.ts)_
+
+## `oclif-example deps:list`
+
+List your workspace dependencies
+
+```
+USAGE
+  $ oclif-example deps:list
+
+OPTIONS
+  -h, --help     show CLI help
+  -k, --keys     Show only keys
+  -n, --npm      Include deps from npm registry
+  -v, --verbose  Show debug level logs
+  --trace        Ensure all requests to VTEX IO are traced
+
+ALIASES
+  $ oclif-example deps:ls
+
+EXAMPLES
+  vtex deps list
+  vtex deps ls
+```
+
+_See code: [build/commands/deps/list.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.0/build/commands/deps/list.ts)_
+
+## `oclif-example deps:update [APPID] [ITHAPPID]`
+
+Update all workspace dependencies or a specific app@version
+
+```
+USAGE
+  $ oclif-example deps:update [APPID] [ITHAPPID]
+
+OPTIONS
+  -h, --help     show CLI help
+  -v, --verbose  Show debug level logs
+  --trace        Ensure all requests to VTEX IO are traced
+
+EXAMPLES
+  vtex deps update
+  vtex deps update vtex.service-example@0.0.1
+```
+
+_See code: [build/commands/deps/update.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.0/build/commands/deps/update.ts)_
 <!-- commandsstop -->
