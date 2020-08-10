@@ -49,7 +49,12 @@
     "bin": "oclif-example",
     "devPlugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "topics": {
+      "deps": {
+        "description": "Dependencies commands. Run 'vtex deps' to see all subcommands"
+      }
+    }
   },
   "repository": "vtex/cli-plugin-deps",
   "scripts": {
