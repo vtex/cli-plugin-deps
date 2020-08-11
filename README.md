@@ -29,7 +29,7 @@ $ npm install -g @vtex/cli-plugin-deps
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@vtex/cli-plugin-deps/0.0.1-beta.0 linux-x64 node-v12.18.3
+@vtex/cli-plugin-deps/0.0.0 linux-x64 node-v12.18.3
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -59,7 +59,7 @@ EXAMPLE
   vtex deps diff workspace1 workspace2
 ```
 
-_See code: [build/commands/deps/diff.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.1-beta.0/build/commands/deps/diff.ts)_
+_See code: [build/commands/deps/diff.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.0/build/commands/deps/diff.ts)_
 
 ## `oclif-example deps:list`
 
@@ -84,7 +84,7 @@ EXAMPLES
   vtex deps ls
 ```
 
-_See code: [build/commands/deps/list.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.1-beta.0/build/commands/deps/list.ts)_
+_See code: [build/commands/deps/list.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.0/build/commands/deps/list.ts)_
 
 ## `oclif-example deps:update [APPID] [ITHAPPID]`
 
@@ -104,5 +104,5 @@ EXAMPLES
   vtex deps update vtex.service-example@0.0.1
 ```
 
-_See code: [build/commands/deps/update.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.1-beta.0/build/commands/deps/update.ts)_
+_See code: [build/commands/deps/update.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.0/build/commands/deps/update.ts)_
 <!-- commandsstop -->
