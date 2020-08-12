@@ -1,5 +1,4 @@
-import chalk from 'chalk'
-import { SessionManager, matchedDepsDiffTable } from 'vtex'
+import { SessionManager, matchedDepsDiffTable, Messages } from 'vtex'
 import { getCleanDependencies } from './utils'
 
 export default async (workspace1 = 'master', workspace2?: string) => {
@@ -10,13 +9,9 @@ export default async (workspace1 = 'master', workspace2?: string) => {
   const diffTable = matchedDepsDiffTable(workspace1, workspace2, deps1, deps2)
 
   if (diffTable.length === 1) {
-    return console.log(
-      `${chalk.yellow('Dependency diff')} between ${chalk.yellow(workspace1)} and ${chalk.yellow(
-        workspace2
-      )} is empty\n`
-    )
+    return console.log(Messages.DEPS_DIFF_EMPTY(workspace1, workspace2))
   }
 
-  console.log(`${chalk.yellow('Dependency diff')} between ${chalk.yellow(workspace1)} and ${chalk.yellow(workspace2)}`)
+  console.log(Messages.DEPS_DIFF_INIT(workspace1, workspace2))
   console.log(diffTable.toString())
 }

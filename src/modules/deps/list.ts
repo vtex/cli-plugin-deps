@@ -1,10 +1,10 @@
-import { createAppsClient, logger } from 'vtex'
+import { createAppsClient, logger, Messages } from 'vtex'
 import { removeNpm } from './utils'
 
 const { getDependencies } = createAppsClient()
 
 export default async (flags: { keys: boolean; npm: boolean }) => {
-  logger.debug('Starting to list dependencies')
+  logger.debug(Messages.DEPS_LIST_INIT)
   const deps = await getDependencies()
   const keysOnly = flags.keys
 

@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 import { diffJson, Change } from 'diff'
 import { map, path } from 'ramda'
-import { createAppsClient, logger, parseLocator } from 'vtex'
+import { createAppsClient, logger, parseLocator, Messages } from 'vtex'
 import { cleanDeps } from './utils'
 
 const { getDependencies, updateDependencies, updateDependency } = createAppsClient()
@@ -10,7 +10,7 @@ export default async (optionalApps: string[]) => {
   const appsList = optionalApps.filter((arg) => arg && arg !== '')
 
   try {
-    logger.debug('Starting update process')
+    logger.debug(Messages.DEPS_UPDATE_INIT_PROCESS)
     const previousDeps = await getDependencies()
     let currentDeps
 
@@ -21,10 +21,10 @@ export default async (optionalApps: string[]) => {
         const { vendor, name, version } = parseLocator(locator)
 
         if (!name || !version) {
-          logger.error(`App ${locator} has an invalid app format, please use <vendor>.<name>@<version>`)
+          logger.error(Messages.DEPS_UPDATE_INVALID_FORMAT_ERROR(locator))
         } else {
           try {
-            logger.debug(`Starting to update ${locator}`)
+            logger.debug(Messages.DEPS_UPDATE_INIT(locator))
             // eslint-disable-next-line no-await-in-loop
             await updateDependency(`${vendor}.${name}`, version, vendor)
           } catch (e) {
@@ -56,7 +56,7 @@ export default async (optionalApps: string[]) => {
       process.stdout.write(color(value))
     })
     if (nAdded === 0 && nRemoved === 0) {
-      logger.info('No dependencies updated')
+      logger.info(Messages.DEPS_UPDATE_EMPTY)
     } else {
       if (nAdded > 0) {
         logger.info('', nAdded, nAdded > 1 ? ' dependencies ' : ' dependency ', chalk.green('added'), ' successfully')
