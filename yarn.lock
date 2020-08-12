@@ -8811,10 +8811,10 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-vtex@^2.108.1-beta:
-  version "2.108.1-beta"
-  resolved "https://registry.yarnpkg.com/vtex/-/vtex-2.108.1-beta.tgz#7c7e37900a5d3141ebf4e909fe64465dc9d1e681"
-  integrity sha512-bdZw1FbfaaluyQzWot2JYyN0jS4OLwQBQ6UapyMtF4sXavkQNbJIzAxFtvg3LO3nykwjxLfKacTrwlOZMLrHxg==
+vtex@^2.108.1-beta.0:
+  version "2.108.1-beta.0"
+  resolved "https://registry.yarnpkg.com/vtex/-/vtex-2.108.1-beta.0.tgz#78d8a7d9b5dd0d4c9dc3147e444638d9f100b723"
+  integrity sha512-xyQh4JW2sqMtF1G3aIdR7+s92pI6cn9JKaH+YQqqjCDkzNuN9OlS/3oM2QG7TUDVv0Vvr9Wcj9yQy8X+eXvZ8w==
   dependencies:
     "@oclif/command" "^1.0.0"
     "@oclif/config" "^1.0.0"
