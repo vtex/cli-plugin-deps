@@ -44,7 +44,7 @@ USAGE
 
 ## `oclif-example deps:diff [WORKSPACE1] [WORKSPACE2]`
 
-Diff between workspace dependencies. If only a parameter is passed the current workspace is used in the diff and if no parameter is passed the diff is made between the current workspace and master
+Diff between workspace dependencies. If only one parameter is passed the current workspace is used in the diff and if no parameter is passed the diff is made between the current workspace and master
 
 ```
 USAGE
