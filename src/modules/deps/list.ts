@@ -1,5 +1,6 @@
-import { createAppsClient, logger, Messages } from 'vtex'
+import { createAppsClient, logger } from 'vtex'
 import { removeNpm } from './utils'
+import { Messages } from '../../lib/constants/Messages'
 
 const { getDependencies } = createAppsClient()
 

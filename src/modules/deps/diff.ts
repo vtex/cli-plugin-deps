@@ -1,5 +1,6 @@
-import { SessionManager, matchedDepsDiffTable, Messages } from 'vtex'
+import { SessionManager, matchedDepsDiffTable } from 'vtex'
 import { getCleanDependencies } from './utils'
+import { Messages } from '../../lib/constants/Messages'
 
 export default async (workspace1 = 'master', workspace2?: string) => {
   workspace2 = workspace2 ?? SessionManager.getSingleton().workspace

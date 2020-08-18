@@ -1,8 +1,9 @@
 import chalk from 'chalk'
 import { diffJson, Change } from 'diff'
 import { map, path } from 'ramda'
-import { createAppsClient, logger, parseLocator, Messages } from 'vtex'
+import { createAppsClient, logger, parseLocator } from 'vtex'
 import { cleanDeps } from './utils'
+import { Messages } from '../../lib/constants/Messages'
 
 const { getDependencies, updateDependencies, updateDependency } = createAppsClient()
 
