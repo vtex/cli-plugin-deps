@@ -1,11 +1,14 @@
 {
-  "name": "@vtex/cli-plugin-template",
-  "description": "vtex plugin template",
-  "version": "0.0.0",
-  "bugs": "https://github.com/vtex/cli-plugin-template/issues",
+  "name": "@vtex/cli-plugin-deps",
+  "description": "vtex plugin deps",
+  "version": "0.0.1",
+  "bugs": "https://github.com/vtex/cli-plugin-deps/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
+    "@tiagonapoli/oclif-plugin-spaced-commands": "^0.0.6",
+    "@types/diff": "^4.0.2",
+    "@types/ramda": "^0.27.14",
     "tslib": "^1"
   },
   "devDependencies": {
@@ -26,7 +29,7 @@
     "ts-jest": "^25.2.1",
     "ts-node": "^8",
     "typescript": "^3.8.2",
-    "vtex": "^2.105.1"
+    "vtex": "^2.110.0-beta.0"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -37,7 +40,7 @@
     "/oclif.manifest.json",
     "/yarn.lock"
   ],
-  "homepage": "https://github.com/vtex/cli-plugin-template",
+  "homepage": "https://github.com/vtex/cli-plugin-deps",
   "keywords": [
     "oclif-plugin"
   ],
@@ -47,9 +50,14 @@
     "bin": "oclif-example",
     "devPlugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "topics": {
+      "deps": {
+        "description": "Dependencies commands. Run 'vtex deps' to see all subcommands"
+      }
+    }
   },
-  "repository": "vtex/cli-plugin-template",
+  "repository": "vtex/cli-plugin-deps",
   "scripts": {
     "build-clean": "rm -rf build",
     "build-incremental": "tsc --incremental",
