@@ -1,7 +1,7 @@
 {
   "name": "@vtex/cli-plugin-deps",
   "description": "vtex plugin deps",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "bugs": "https://github.com/vtex/cli-plugin-deps/issues",
   "dependencies": {
     "@oclif/command": "^1",
