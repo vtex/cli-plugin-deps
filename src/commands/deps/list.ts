@@ -1,19 +1,22 @@
 import { flags as oclifFlags } from '@oclif/command'
 
-import { CustomCommand } from 'vtex'
+import { CustomCommand, ColorifyConstants } from 'vtex'
 import workspaceDepsList from '../../modules/deps/list'
 
 export default class DepsList extends CustomCommand {
   static aliases = ['deps:ls']
 
-  static description = 'List your workspace dependencies'
+  static description = `Displays the complete dependency tree of the current workspace.`
 
-  static examples = ['vtex deps list', 'vtex deps ls']
+  static examples = [
+    `${ColorifyConstants.COMMAND_OR_VTEX_REF('vtex deps list')}`,
+    `${ColorifyConstants.COMMAND_OR_VTEX_REF('vtex deps ls')}`,
+  ]
 
   static flags = {
     ...CustomCommand.globalFlags,
-    keys: oclifFlags.boolean({ char: 'k', description: 'Show only keys', default: false }),
-    npm: oclifFlags.boolean({ char: 'n', description: 'Include deps from npm registry', default: false }),
+    keys: oclifFlags.boolean({ char: 'k', description: 'Shows only key dependencies.', default: false }),
+    npm: oclifFlags.boolean({ char: 'n', description: 'Includes dependencies from npm registry.', default: false }),
   }
 
   static args = []

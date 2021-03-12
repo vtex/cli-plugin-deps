@@ -29,7 +29,7 @@ $ npm install -g @vtex/cli-plugin-deps
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@vtex/cli-plugin-deps/0.0.1 linux-x64 node-v12.18.3
+@vtex/cli-plugin-deps/0.1.0 linux-x64 node-v12.21.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -44,11 +44,15 @@ USAGE
 
 ## `oclif-example deps:diff [WORKSPACE1] [WORKSPACE2]`
 
-Diff between workspace dependencies. If only one parameter is passed the current workspace is used in the diff and if no parameter is passed the diff is made between the current workspace and master
+Displays the differences between the dependencies of two distinct workspaces. If a single parameter is passed, the specified workspace's dependencies are compared with the master's. If no parameter is passed, the diff is made between the current workspace and master.
 
 ```
 USAGE
   $ oclif-example deps:diff [WORKSPACE1] [WORKSPACE2]
+
+ARGUMENTS
+  WORKSPACE1  First workspace for comparison.
+  WORKSPACE2  [default: master] Second workspace for comparison.
 
 OPTIONS
   -h, --help     show CLI help
@@ -59,11 +63,11 @@ EXAMPLE
   vtex deps diff workspace1 workspace2
 ```
 
-_See code: [build/commands/deps/diff.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.1/build/commands/deps/diff.ts)_
+_See code: [build/commands/deps/diff.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.1.0/build/commands/deps/diff.ts)_
 
 ## `oclif-example deps:list`
 
-List your workspace dependencies
+Displays the complete dependency tree of the current workspace.
 
 ```
 USAGE
@@ -71,8 +75,8 @@ USAGE
 
 OPTIONS
   -h, --help     show CLI help
-  -k, --keys     Show only keys
-  -n, --npm      Include deps from npm registry
+  -k, --keys     Shows only key dependencies.
+  -n, --npm      Includes dependencies from npm registry.
   -v, --verbose  Show debug level logs
   --trace        Ensure all requests to VTEX IO are traced
 
@@ -84,15 +88,19 @@ EXAMPLES
   vtex deps ls
 ```
 
-_See code: [build/commands/deps/list.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.1/build/commands/deps/list.ts)_
+_See code: [build/commands/deps/list.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.1.0/build/commands/deps/list.ts)_
 
 ## `oclif-example deps:update [APPID] [ITHAPPID]`
 
-Update all workspace dependencies or a specific app@version
+Updates a dependency of the current workspace. If not specified which dependency, it updates all of them.
 
 ```
 USAGE
   $ oclif-example deps:update [APPID] [ITHAPPID]
+
+ARGUMENTS
+  APPID     Name and version of the app ({vendor}.{appname}@{x.x.x}) to update.
+  ITHAPPID  Names and versions of the multiple apps ({vendor}.{appname}@{x.x.x}) to update.
 
 OPTIONS
   -h, --help     show CLI help
@@ -104,5 +112,5 @@ EXAMPLES
   vtex deps update vtex.service-example@0.0.1
 ```
 
-_See code: [build/commands/deps/update.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.0.1/build/commands/deps/update.ts)_
+_See code: [build/commands/deps/update.ts](https://github.com/vtex/cli-plugin-deps/blob/v0.1.0/build/commands/deps/update.ts)_
 <!-- commandsstop -->
