@@ -2,15 +2,9 @@ import { CustomCommand, SessionManager, ColorifyConstants } from 'vtex'
 import workspaceDepsDiff from '../../modules/deps/diff'
 
 export default class DepsDiff extends CustomCommand {
-  static description = `Displays the differences between the dependencies of two distinct ${ColorifyConstants.ID(
-    'workspaces'
-  )}. If a single parameter is passed, the specified ${ColorifyConstants.ID(
-    "workspace's"
-  )} dependencies are compared with the master's. If no parameter is passed, the diff is made between the current ${ColorifyConstants.ID(
-    'workspace'
-  )} and master.`
+  static description = `Displays the differences between the dependencies of two distinct workspaces. If a single parameter is passed, the specified workspace's dependencies are compared with the master's. If no parameter is passed, the diff is made between the current workspace and master.`
 
-  static examples = [`${ColorifyConstants.COMMAND_OR_VTEX_REF('vtex deps diff')} workspace1 workspace2`]
+  static examples = [`vtex deps diff workspace1 workspace2`]
 
   static flags = {
     ...CustomCommand.globalFlags,

@@ -6,7 +6,7 @@ import workspaceDepsList from '../../modules/deps/list'
 export default class DepsList extends CustomCommand {
   static aliases = ['deps:ls']
 
-  static description = `Displays the complete dependency tree of the current ${ColorifyConstants.ID('workspace')}.`
+  static description = `Displays the complete dependency tree of the current workspace.`
 
   static examples = [
     `${ColorifyConstants.COMMAND_OR_VTEX_REF('vtex deps list')}`,

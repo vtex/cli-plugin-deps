@@ -2,9 +2,7 @@ import { CustomCommand, ColorifyConstants } from 'vtex'
 import workspaceDepsUpdate from '../../modules/deps/update'
 
 export default class DepsUpdate extends CustomCommand {
-  static description = `Updates a dependency of the current ${ColorifyConstants.ID(
-    'workspace'
-  )}. If not specified which dependency, it updates all of them.`
+  static description = `Updates a dependency of the current workspace. If not specified which dependency, it updates all of them.`
 
   static examples = [
     `${ColorifyConstants.COMMAND_OR_VTEX_REF('vtex deps update')}`,
