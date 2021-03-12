@@ -6,7 +6,7 @@ export default class DepsDiff extends CustomCommand {
     'workspaces'
   )}. If a single parameter is passed, the specified ${ColorifyConstants.ID(
     "workspace's"
-  )} dependencies are compared with the master\'s. If no parameter is passed, the diff is made between the current ${ColorifyConstants.ID(
+  )} dependencies are compared with the master's. If no parameter is passed, the diff is made between the current ${ColorifyConstants.ID(
     'workspace'
   )} and master.`
 
