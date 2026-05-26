@@ -1,5 +1,5 @@
 - name: cli-plugin-deps
-  referenceId: PLACEHOLDER
+  referenceId: O8I6TYUO
   build:
     provider: dkcicd
     pipelines:
