@@ -77,7 +77,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && bash scripts/sonar-verify-staged.sh"
     }
   },
   "lint-staged": {
